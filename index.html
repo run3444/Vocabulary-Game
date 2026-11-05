@@ -4,132 +4,297 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f5f3ed">
-  <meta name="description" content="A thoughtful little vocabulary game.">
-  <title>Wordwell — Make words yours</title>
+
+  <meta name="theme-color" content="#17231f">
+  <meta name="description" content="Wordwell — a thoughtful vocabulary game.">
+
+  <title>Wordwell — Make words yours.</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+    rel="stylesheet"
+  >
+
   <link rel="stylesheet" href="style.css">
   <script src="app.js" defer></script>
 </head>
+
 <body>
+
   <div class="grain" aria-hidden="true"></div>
 
+  <!-- Navigation -->
   <header class="topbar">
-    <a class="wordmark" href="#">
+
+    <a class="wordmark" href="#" aria-label="Wordwell home">
       <span class="mark">w.</span>
       <span>wordwell</span>
     </a>
+
     <div class="top-meta">
       <span class="live-dot"></span>
       THE DAILY WORD SESSION
     </div>
-    <button class="sound-toggle" id="sound-toggle" type="button" aria-pressed="false">
-      <span>♫</span>
+
+    <button
+      class="sound-toggle"
+      id="sound-toggle"
+      type="button"
+      aria-pressed="false"
+      aria-label="Toggle sound"
+    >
+      <span aria-hidden="true">♫</span>
       <span>Sound off</span>
     </button>
+
   </header>
 
   <main class="page-shell">
+
+    <!-- Hero -->
     <section class="intro">
+
       <div class="eyebrow">
         <span class="eyebrow-line"></span>
         A SMALL EXERCISE FOR A BIGGER VOCABULARY
       </div>
-      <h1>Make words<br><em>yours.</em></h1>
-      <p class="intro-copy">Ten words. A few good minutes. See what sticks.</p>
+
+      <h1>
+        Make words<br>
+        <em>yours.</em>
+      </h1>
+
+      <p class="intro-copy">
+        Ten words. A few good minutes. See what sticks.
+      </p>
+
       <div class="intro-note">
         <span class="note-star">✳</span>
         <span>Take your time. Curiosity beats speed.</span>
       </div>
+
     </section>
 
+    <!-- Vocabulary game -->
     <section class="game-card" aria-labelledby="question-title">
+
       <div class="game-topline">
-        <div class="session-label">✳ YOUR PRACTICE</div>
-        <div class="round-count" id="round-count">01 <span>/ 10</span></div>
+
+        <div class="session-label">
+          ✳ YOUR PRACTICE
+        </div>
+
+        <div class="round-count" id="round-count">
+          01 <span>/ 10</span>
+        </div>
+
       </div>
 
-      <div class="progress-track" id="progress-track"
-        role="progressbar" aria-valuemin="0" aria-valuemax="10" aria-valuenow="0">
+      <!-- Progress -->
+      <div
+        class="progress-track"
+        id="progress-track"
+        role="progressbar"
+        aria-label="Quiz progress"
+        aria-valuemin="0"
+        aria-valuemax="10"
+        aria-valuenow="0"
+      >
         <div class="progress-fill" id="progress-fill"></div>
       </div>
 
+      <!-- Questions -->
       <div class="question-area" id="question-area">
-        <div class="question-kicker" id="question-kicker">WORD 01 · PICK THE MEANING</div>
-        <h2 id="question-title">Abridge</h2>
-        <p class="pronunciation" id="pronunciation">/əˈbrɪdʒ/ · verb</p>
-        <p class="question-prompt">Which meaning fits this word best?</p>
 
-        <div class="answers" id="answers">
-          <button class="answer" type="button"><span class="answer-letter">A</span><span class="answer-text"></span><span class="answer-check"></span></button>
-          <button class="answer" type="button"><span class="answer-letter">B</span><span class="answer-text"></span><span class="answer-check"></span></button>
-          <button class="answer" type="button"><span class="answer-letter">C</span><span class="answer-text"></span><span class="answer-check"></span></button>
-          <button class="answer" type="button"><span class="answer-letter">D</span><span class="answer-text"></span><span class="answer-check"></span></button>
+        <div class="question-kicker" id="question-kicker">
+          WORD 01 · PICK THE MEANING
         </div>
 
-        <div class="feedback" id="feedback" aria-live="polite" hidden>
-          <div class="feedback-mark" id="feedback-mark">✓</div>
-          <div class="feedback-copy">
-            <strong id="feedback-title">That's it.</strong>
-            <p id="feedback-detail"></p>
+        <h2 id="question-title">
+          Abridge
+        </h2>
+
+        <p class="pronunciation" id="pronunciation">
+          /əˈbrɪdʒ/ · verb
+        </p>
+
+        <p class="question-prompt">
+          Which meaning fits this word best?
+        </p>
+
+        <!-- Answer choices -->
+        <div class="answers" id="answers">
+
+          <button class="answer" type="button">
+            <span class="answer-letter">A</span>
+            <span class="answer-text"></span>
+            <span class="answer-check"></span>
+          </button>
+
+          <button class="answer" type="button">
+            <span class="answer-letter">B</span>
+            <span class="answer-text"></span>
+            <span class="answer-check"></span>
+          </button>
+
+          <button class="answer" type="button">
+            <span class="answer-letter">C</span>
+            <span class="answer-text"></span>
+            <span class="answer-check"></span>
+          </button>
+
+          <button class="answer" type="button">
+            <span class="answer-letter">D</span>
+            <span class="answer-text"></span>
+            <span class="answer-check"></span>
+          </button>
+
+        </div>
+
+        <!-- Answer feedback -->
+        <div
+          class="feedback"
+          id="feedback"
+          aria-live="polite"
+          hidden
+        >
+
+          <div class="feedback-mark" id="feedback-mark">
+            ✓
           </div>
-          <button class="next-button" id="next-button" type="button">
+
+          <div class="feedback-copy">
+
+            <strong id="feedback-title">
+              That's it.
+            </strong>
+
+            <p id="feedback-detail"></p>
+
+          </div>
+
+          <button
+            class="next-button"
+            id="next-button"
+            type="button"
+          >
             Continue <span>↗</span>
           </button>
+
         </div>
+
       </div>
 
+      <!-- Results -->
       <div class="results" id="results" hidden>
-        <div class="result-flower">✳</div>
-        <div class="question-kicker">SESSION COMPLETE</div>
-        <h2 id="result-heading">Nicely done.</h2>
-        <p class="result-copy" id="result-copy"></p>
-        <div class="score-panel">
-          <div>
-            <span class="score-number" id="final-score">0/10</span>
-            <span class="score-caption">CORRECT</span>
-          </div>
-          <div class="score-divider"></div>
-          <div>
-            <span class="score-number" id="final-percent">0%</span>
-            <span class="score-caption">ACCURACY</span>
-          </div>
+
+        <div class="result-flower">
+          ✳
         </div>
-        <button class="restart-button" id="restart-button" type="button">
+
+        <div class="question-kicker">
+          SESSION COMPLETE
+        </div>
+
+        <h2 id="result-heading">
+          Nicely done.
+        </h2>
+
+        <p class="result-copy" id="result-copy"></p>
+
+        <div class="score-panel">
+
+          <div>
+            <span class="score-number" id="final-score">
+              0/10
+            </span>
+
+            <span class="score-caption">
+              CORRECT
+            </span>
+          </div>
+
+          <div class="score-divider"></div>
+
+          <div>
+            <span class="score-number" id="final-percent">
+              0%
+            </span>
+
+            <span class="score-caption">
+              ACCURACY
+            </span>
+          </div>
+
+        </div>
+
+        <button
+          class="restart-button"
+          id="restart-button"
+          type="button"
+        >
           Practice again <span>↗</span>
         </button>
+
       </div>
 
+      <!-- Score bar -->
       <div class="card-footer">
+
         <div class="footer-stat">
           <span class="stat-label">CORRECT</span>
           <strong id="correct-count">0</strong>
         </div>
+
         <div class="footer-stat">
           <span class="stat-label">STREAK</span>
           <strong id="streak-count">0 ↗</strong>
         </div>
-        <div class="footer-motto">A good word is worth keeping.</div>
+
+        <div class="footer-motto">
+          A good word is worth keeping.
+        </div>
+
       </div>
+
     </section>
 
+    <!-- Vocabulary collection -->
     <section class="word-shelf">
+
       <div class="shelf-heading">
+
         <div>
-          <div class="eyebrow shelf-eyebrow">THE COLLECTION</div>
+          <div class="eyebrow shelf-eyebrow">
+            THE COLLECTION
+          </div>
+
           <h2>Words to keep.</h2>
         </div>
-        <span class="shelf-count" id="shelf-count">10 WORDS</span>
+
+        <span class="shelf-count" id="shelf-count">
+          10 WORDS
+        </span>
+
       </div>
+
       <div class="word-grid" id="word-grid"></div>
+
     </section>
 
+    <!-- Footer -->
     <footer class="site-footer">
+
       <span>WORDWELL / 2026</span>
+
       <span>MADE FOR THE LOVE OF LANGUAGE</span>
+
     </footer>
+
   </main>
+
 </body>
 </html>
